@@ -15,12 +15,12 @@
   //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   //   }
   // ],
-  "r2_buckets": [
-    {
-      "binding": "MEDIA", // binding to connect cloudflare worker to cloudflare resource (R2,KV,D1), to use it c.MEDIA.put or if binding = DIKA, c.DIKA.put
-      "bucket_name": "anantaka-cms-media"
-    }
-  ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MEDIA", // binding to connect cloudflare worker to cloudflare resource (R2,KV,D1), to use it c.MEDIA.put or if binding = DIKA, c.DIKA.put
+  //     "bucket_name": "anantaka-cms-media"
+  //   }
+  // ],
   "secrets": {
     "required": [  // this 2 required to run be either in local dev or as a cloudflare worker
       "SUPABASE_URL", 
