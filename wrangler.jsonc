@@ -26,7 +26,13 @@
       "SUPABASE_URL", 
       "SUPABASE_SECRET_KEY",
     ]
-  }
+  },
+  "routes": [
+    {
+      "pattern": "api.yayasananantaka.org",
+      "custom_domain": true
+    }
+  ]
   // "d1_databases": [
   //   {
   //     "binding": "MY_DB",
