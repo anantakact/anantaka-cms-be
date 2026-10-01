@@ -1,0 +1,44 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "anantaka-cms-be",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01", // use current date 
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // "vars": {
+  //   "MY_VAR": "my-variable"
+  // },
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MY_KV_NAMESPACE",
+  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  //   }
+  // ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA", // binding to connect cloudflare worker to cloudflare resource (R2,KV,D1), to use it c.MEDIA.put or if binding = DIKA, c.DIKA.put
+      "bucket_name": "anantaka-cms-media"
+    }
+  ],
+  "secrets": {
+    "required": [  // this 2 required to run be either in local dev or as a cloudflare worker
+      "SUPABASE_URL", 
+      "SUPABASE_SECRET_KEY",
+    ]
+  }
+  // "d1_databases": [
+  //   {
+  //     "binding": "MY_DB",
+  //     "database_name": "my-database",
+  //     "database_id": ""
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}

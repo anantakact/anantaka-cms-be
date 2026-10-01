@@ -1,9 +1,0 @@
-name = "cms-api"
-main = "src/index.js"
-## tanggal sekarang, pls refer to this docs: https://developers.cloudflare.com/workers/configuration/compatibility-dates/
-compatibility_date = "2026-10-01"
-
-## custom domain = true maka api nya ke url ini, karena defaultnya itu https://cms-api.<your-subdomain>.workers.dev
-[[routes]]
-pattern = "api.yayasananantaka.org"
-custom_domain = true
