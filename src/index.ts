@@ -9,9 +9,14 @@ const app = new Hono<{
 app.use(requestLogger)
 
 app.onError((err, c) => {
-  console.error(err)
-  return c.json({ 
-    error: 'Internal Server Error' 
+  console.error(JSON.stringify({
+    method: c.req.method,
+    path: c.req.path,
+    error: err.message,
+    stack: err.stack,
+  }))
+  return c.json({
+    error: 'Internal Server Error'
   }, 500)
 })
 

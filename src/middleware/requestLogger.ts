@@ -10,9 +10,12 @@ export const requestLogger: MiddlewareHandler = async (c, next) => {
   await next()
 
   const responseBody = await c.res.clone().text()
-  console.log(`${method} ${path} -> ${c.res.status}`, {
+  console.log(JSON.stringify({
+    method,
+    path,
+    status: c.res.status,
     ...(Object.keys(query).length > 0 && { query }),
     ...(body !== undefined && { requestBody: body }),
     responseBody,
-  })
+  }))
 }
